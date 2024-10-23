@@ -17,7 +17,6 @@ export const client = new GraphQLClient(API_URL, {
         }
     }
 })
-
 export  const wsClient = typeof window !== "undefined" 
   ? createClient({
     url: WS_URL,
@@ -32,6 +31,6 @@ export  const wsClient = typeof window !== "undefined"
     }
   })
   : undefined
-
+  
   export const dataProvider = graphqlDataProvider(client);
   export const liveProvider = wsClient? graphqlLiveProvider(wsClient) : undefined;
